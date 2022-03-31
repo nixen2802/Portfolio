@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/homepage.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="navshower first">
+        <nav>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links">
+                <b><li><a href="#">Home</a></li></b>
+                <b><li><a href="#">Solutions</a></li></b>
+                <b><li><a href="#">Products</a></li></b>
+                <b><li><a href="#">Services</a></li></b>
+                <b><li><a href="#">Contact Us</a></li></b>
+            </ul>
+        </nav>
+    </div>
+    <div>
+        Start scrolling down...
+        <div class="animated-box">
+      
+        </div>
+              
+        <div class="animated-box">
+              
+        </div>
+      
+        <div class="animated-box">
+        
+        </div>
+        
+        <div class="animated-box">
+        
+        </div>
+        
+        <div class="animated-box">
+        
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.addEventListener("scroll", function(event) {
+                const animatedBoxes = document.getElementsByClassName("animated-box");
+                const windowOffsetTop = window.innerHeight + window.scrollY;
+        
+                Array.prototype.forEach.call(animatedBoxes, (animatedBox) => {
+                    const animatedBoxOffsetTop = animatedBox.offsetTop;
+        
+                    if (windowOffsetTop >= animatedBoxOffsetTop) {
+                        addClass(animatedBox, "fade-in");
+                    }
+                });
+            });
+        });
+        
+        function addClass(element, className) {
+            const arrayClasses = element.className.split(" ");
+            if (arrayClasses.indexOf(className) === -1) {
+                element.className += " " + className;
+            }
+        }
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const links = document.querySelectorAll(".nav-links li");
+
+        hamburger.addEventListener('click', ()=>{
+        //Animate Links
+            navLinks.classList.toggle("open");
+            links.forEach(link => {
+                link.classList.toggle("fade");
+            });
+
+            //Hamburger Animation
+            hamburger.classList.toggle("toggle");
+        });
+      </script>      
+</body>
+</html>
