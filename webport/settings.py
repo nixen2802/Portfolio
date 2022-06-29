@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')_k#^qc_eb+m24@-8a8+nt585(rm+#0*)k#0gt+!)3-x^be_pl'
+SECRET_KEY=os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost","192.168.106.92", "192.168.184.92", "192.168.13.92"]
+ALLOWED_HOSTS = ["localhost","https://nayanportfolio.herokuapp.com/"]
 
 # Application definition
 
@@ -135,7 +135,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "contactnayan10@gmail.com"
-EMAIL_HOST_PASSWORD = "xyqxbsokcrowuchp"
+EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
 
 django_heroku.settings(locals())
