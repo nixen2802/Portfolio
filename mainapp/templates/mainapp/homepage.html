@@ -5,87 +5,409 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Nayan Mandliya</title>
+    <link rel = "icon" href = "{% static "mainapp/images/nayancar.png" %}" type = "image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static 'mainapp/homepage.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "fontawesome/css/all.min.css" %}" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="navshower first">
-        <nav>
-            <div class="hamburger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+<body style="font-family: 'optima', sans-serif; overflow-x: hidden">
+    <div id="loading">
+        <img id="loading-image" src="{% static "mainapp/loader.gif" %}" alt="Loading..." />
+    </div> 
+    <nav class="navbar navbar-expand-md navbar-dark" style=" font-weight: 700; padding: 0; position: fixed; width: 100%; background-color: #131313">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+            {% endfor %}
+        {% endif %}
+    <div class="container">
+        <div class="row justify-content-end" style="width: 100%">
+            <div class="navbar-brand col-3" style="float: left">
+                <img src="{% static "mainapp/images/nayancar.png" %}" alt="logo" height=100px width=100px>
             </div>
-            <ul class="nav-links">
-                <b><li><a href="#">Home</a></li></b>
-                <b><li><a href="#">Solutions</a></li></b>
-                <b><li><a href="#">Products</a></li></b>
-                <b><li><a href="#">Services</a></li></b>
-                <b><li><a href="#">Contact Us</a></li></b>
-            </ul>
-        </nav>
+        <button class="navbar-toggler col-8" style="border: 0px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="float: right;"></span>
+        </button>
+                <div class="collapse navbar-collapse col-8" id="navbarSupportedContent" style="float: right; justify-content: flex-end;">
+                    <ul class="navbar-nav mr-auto float-right">
+                        <li class="sec-1 nav-item active">
+                            <a class="nav-link hover-underline-animation" href="#sec-1" style="padding-left: 10px">Home</a>
+                        </li>
+                        <li class="about nav-item">
+                            <a class="nav-link hover-underline-animation" href="#about" style="padding-left: 10px">About</a>
+                        </li>
+                        <li class="education nav-item">
+                            <a class="nav-link hover-underline-animation" href="#education" style="padding-left: 10px">Education</a>
+                        </li>
+                        <li class="projects nav-item">
+                            <a class="nav-link hover-underline-animation" href="#projects" style="padding-left: 10px">Projects</a>
+                        </li>
+                        <li class="skills nav-item">
+                            <a class="nav-link hover-underline-animation" href="#skills" style="padding-left: 10px">Skills</a>
+                        </li>
+                        <li class="contact nav-item">
+                            <a class="nav-link hover-underline-animation" href="#contact" style="padding-left: 10px">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin: 0px 0px;">
+        <section class="row" id="sec-1">
+            <div class="container">
+                <div class="row mainarea">
+                    <div id="maintext">
+                        <span style="color: blue; margin-bottom: 3vh">Hello, I'm Nayan Mandliya</span>
+                    </div>
+                    <div id="text" style="font-size: 5vh"><div id="cursor"></div></div>
+                </div>
+            </div>
+        </section>
+        <section class="row justify-content-center" id="about" style="padding-top: 15vh; width: 100vw; overflow-y: hidden">
+            <div class="bord reveal fade-left">
+                <div class="row" style="overflow-y: hidden">
+                    <div class="col-sm-6 tempj">
+                        <img src="{% static "mainapp/images/nayancar.png" %}" alt="logo" class="about-img floater">
+                    </div>
+                    <div class="col-sm-6 tempg">
+                        <p><strong class="tempb">Name:</strong> <span class="templ">Nayan Mansukhbhai Mandliya</span></p>
+                        <br>
+                        <p><strong class="tempb">About me:</strong> <span class="templ">A computer engineering student and a full-stack web developer. Eager to learn new technologies and methodologies. 
+                            School and college topper. Passionate about software architecture and cloud computing.</span></p>
+                        <br>
+                        <p><strong class="tempb">Email:</strong> <span class="templ">nayanmandaliya01@gmail.com</span></p>
+                        <br>
+                        <p><strong class="tempb">Education:</strong> <span class="templ">Pursuing BTECH in computer engineering from KJ Somaiya college of engineering</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="education" style="padding-top: 15vh; width: 100vw">
+            <div class="overlayyer reveal fade-right" style="padding: 0 0;">
+                <div class="row temper underoverlay" style="margin: 0 0">
+                    <div class="col-sm-3" id="bandbord" style="background-color: white; border: 1px solid black; border-radius: 4px; margin-left: 5px; opacity: 0.85">
+                        <img src="{% static "mainapp/education1.png" %}" alt="10th result" height=100 width=100>
+                        <p><strong>SSC (10th)</strong></p>
+                        <p>RAV High School</p>
+                        <p>Percentage : 90.20</p>
+                    </div>
+                    <div class="col-sm-3" id="bandbord2" style="background-color: white; border: 1px solid black; border-radius: 4px; margin-left: 5px; opacity: 0.85">
+                        <img src="{% static "mainapp/education1.png" %}" alt="12th result" height=100 width=100>
+                        <p><strong>HSC (12th)</strong></p>
+                        <p>KJ Somaiya college of science and commerce</p>
+                        <p>Percentage : 91.54</p>
+                    </div>
+                    <div class="col-sm-3" id="bandbord3" style="background-color: white; border: 1px solid black; border-radius: 4px; margin-left: 5px; opacity: 0.85">
+                        <img src="{% static "mainapp/education1.png" %}" alt="Btech result" height=100 width=100>
+                        <p><strong>Btech in computer engineering</strong></p>
+                        <p>KJ Somaiya college of engineering</p>
+                        <p>CGPI : 9.5 (Upto sem 5)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="projects" style="padding-top: 15vh; width: 100vw; justify-content: center">
+            <div class="startbord reveal fade-left">
+                <div style="text-align: center; margin-top: 10px" class="flashit">
+                    <div class="row cent">
+                        <div class="circle col-sm"></div>
+                        <h1 class="col-sm">Projects</h1>
+                        <div class="circle col-sm"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row centgrid reveal fade-bottom">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-image" src="{% static "mainapp/proj1.jpeg" %}" alt="project1" height=100 width=100>
+                        <div class="makecen">
+                            <h4 style="color: #2839d4">BillitUp</h4>
+                            <p>Billing system developed using React</p>
+                            <div class="linker">
+                                <a href="https://github.com/nixen2802/MERN-PROJECT" target="/blank" style="color: black"><i class="fa fa-github-square fa-3x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-image" src="{% static "mainapp/proj2.png" %}" alt="project2" height=100 width=100>
+                        <div class="makecen">
+                            <h4 style="color: #2839d4">RupeeDeposit</h4>
+                            <p>Banking system developed using Django</p>
+                            <div class="linker">
+                                <a href="https://github.com/nixen2802/Sparks-Foundation" target="/blank" style="color: black"><i class="fa fa-github-square fa-3x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-image" src="{% static "mainapp/proj3.png" %}" alt="project3" height=100 width=100>
+                        <div class="makecen">
+                            <h4 style="color: #2839d4">Peer Grade</h4>
+                            <p>Peer grading system developed using python</p>
+                            <div class="linker">
+                                <a href="https://github.com/nixen2802/Peer-Grade-System" target="/blank" style="color: black"><i class="fa fa-github-square fa-3x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-image" src="{% static "mainapp/proj4.png" %}" alt="project4" height=100 width=100>
+                        <div class="makecen">
+                            <h4 style="color: #2839d4">AttMarker</h4>
+                            <p>Smart attendance system using Tkinter</p>
+                            <div class="linker">
+                                <a href="https://github.com/Data-Generation/Smart-Attendance-System" target="/blank" style="color: black"><i class="fa fa-github-square fa-3x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-image" src="{% static "mainapp/proj5.png" %}" alt="project5" height=100 width=100>
+                        <div class="makecen">
+                            <h4 style="color: #2839d4">Panacea</h4>
+                            <p>A web app to connect doctors and patients</p>
+                            <div class="linker">
+                                <a href="https://github.com/Panacea-4-U/Modular-Panacea" target="/blank" style="color: black"><i class="fa fa-github-square fa-3x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img class="card-image" src="{% static "mainapp/proj6.png" %}" alt="project6" height=100 width=100>
+                        <div class="makecen">
+                            <h4 style="color: #2839d4">Sure password</h4>
+                            <p>Web-app that stores passwords</p>
+                            <div class="linker">
+                                <a href="https://github.com/rushabhgandhi13/sure_password" target="/blank" style="color: black"><i class="fa fa-github-square fa-3x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="skills" style="padding-top: 15vh; width: 100vw">
+            <div class="overlayyer1" style="padding: 0 0;">
+                <div class="row temper underoverlay1" style="margin: 0 0">
+                    <h1 style="color: floralwhite; border-bottom: 3px solid floralwhite;" class="reveal fade-right">Skills</h1>
+                    <div class="row reveal fade-left" style="display: flex; justify-content: center; align-items: center">
+                        <div class="col-md-3 col-sm-2 col-lg-2">
+                            <div class="skill" style="background-color: white; border: 1px solid white; border-radius: 6px;">
+                                <img src="{% static 'mainapp/cpp.png' %}" alt="c++" height=100 width=100>
+                                <p style="color: floralwhite; background-color: gray">C++</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-2 col-lg-2">
+                            <div class="skill" style="background-color: white; border: 1px solid white; border-radius: 6px">
+                                <img src="{% static 'mainapp/python.png' %}" alt="python" height=100 width=100>
+                                <p style="color: floralwhite; background-color: gray">Python</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-2 col-lg-2">
+                            <div class="skill" style="background-color: white; border: 1px solid white; border-radius: 6px">
+                                <img src="{% static 'mainapp/django.png' %}" alt="django" height=100 width=100>
+                                <p style="color: floralwhite; background-color: gray">Django</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-2 col-lg-2">
+                            <div class="skill" style="background-color: white; border: 1px solid white; border-radius: 6px">
+                                <img src="{% static 'mainapp/react.png' %}" alt="react" height=100 width=100>
+                                <p style="color: floralwhite; background-color: gray">ReactJS</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-2 col-lg-2">
+                            <div class="skill" style="background-color: white; border: 1px solid white; border-radius: 6px">
+                                <img src="{% static 'mainapp/node1.png' %}" alt="node" height=100 width=100>
+                                <p style="color: floralwhite; background-color: gray">NodeJS</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-2 col-lg-2">
+                            <div class="skill" style="background-color: white; border: 1px solid white; border-radius: 6px">
+                                <img src="{% static 'mainapp/flutter1.png' %}" alt="flutter" height=100 width=80>
+                                <p style="color: floralwhite; background-color: gray">Flutter</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-2 col-lg-2">
+                            <div class="skill" style="background-color: white; border: 1px solid white; border-radius: 6px">
+                                <img src="{% static 'mainapp/mysql1.png' %}" alt="MySql" height=100 width=100>
+                                <p style="color: floralwhite; background-color: gray">MySQL</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-2 col-lg-2">
+                            <div class="skill" style="background-color: white; border: 1px solid white; border-radius: 6px">
+                                <img src="{% static 'mainapp/mongodb1.png' %}" alt="mongodb" height=100 width=100>
+                                <p style="color: floralwhite; background-color: gray">MongoDB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row" id="contact" style="padding-top: 15vh; width: 100vw;">
+            <div class="foot">
+                <div class="row" style="display: flex;
+                justify-content: center;
+                align-items: flex-start; margin-bottom: 100px">
+                    <div class="col-sm-5 col-lg-5 col-md-5">
+                        <h2 style="margin-bottom: 30px; margin-top: 20px"><span style="border-bottom: 3px solid orange">Available at</span></h2>
+                        <h5 style="margin-bottom: 30px;"><i class="fa fa-envelope fa-lg"></i>&nbsp; nayanmandaliya01@gmail.com</h5>
+                        <h5 style="margin-bottom: 30px;"><i class="fa fa-mobile fa-lg"></i>&nbsp; +91 9967890289</h5>
+                        <a href="https://github.com/nixen2802" target="/blank" style="color: black; margin-left: 20px;"><i class="fa fa-github-square fa-3x"></i></a>
+                        <a href="https://www.linkedin.com/in/nayan-mandliya-7490aa192/" target="/blank" style="color: black; margin-left: 20px;"><i class="fa fa-linkedin fa-3x"></i></a>
+                    </div>
+                    <div class="col-sm-5 col-lg-5 col-md-5">
+                        <h2 style="margin-bottom: 30px; margin-top: 20px"><span style="border-bottom: 3px solid orange; margin-bottom: 20px !important">Send message</span></h2>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="fiein">
+                                    <input class="form-control" name="name" placeholder="Name" type="text" required>
+                                </div>
+                                <div class="fiein">
+                                    <input class="form-control" name="email" placeholder="Email" type="email" required>
+                                </div>
+                                <div class="fiein">
+                                    <textarea class="form-control" name="message" cols="40" rows="10" placeholder="Message" required maxlength="500" style="height: 277px;"></textarea>
+                                </div>
+                                <div>
+                                    <button style="background: #F77D24; width: 50%" onclick="load()"><i class="fa fa-envelope"></i>&nbsp; Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-    <div>
-        Start scrolling down...
-        <div class="animated-box">
-      
-        </div>
-              
-        <div class="animated-box">
-              
-        </div>
-      
-        <div class="animated-box">
-        
-        </div>
-        
-        <div class="animated-box">
-        
-        </div>
-        
-        <div class="animated-box">
-        
-        </div>
-      </div>
-      <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-            document.addEventListener("scroll", function(event) {
-                const animatedBoxes = document.getElementsByClassName("animated-box");
-                const windowOffsetTop = window.innerHeight + window.scrollY;
-        
-                Array.prototype.forEach.call(animatedBoxes, (animatedBox) => {
-                    const animatedBoxOffsetTop = animatedBox.offsetTop;
-        
-                    if (windowOffsetTop >= animatedBoxOffsetTop) {
-                        addClass(animatedBox, "fade-in");
-                    }
-                });
-            });
-        });
-        
-        function addClass(element, className) {
-            const arrayClasses = element.className.split(" ");
-            if (arrayClasses.indexOf(className) === -1) {
-                element.className += " " + className;
-            }
-        }
-        const hamburger = document.querySelector(".hamburger");
-        const navLinks = document.querySelector(".nav-links");
-        const links = document.querySelectorAll(".nav-links li");
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function(){ document.getElementById("loading").style.display = "none" }
+        var _CONTENT = [ 
+	"Web developer",
+    "Pursuing BTECH from KJSCE"
+];
 
-        hamburger.addEventListener('click', ()=>{
-        //Animate Links
-            navLinks.classList.toggle("open");
-            links.forEach(link => {
-                link.classList.toggle("fade");
-            });
+// Current sentence being processed
+var _PART = 0;
 
-            //Hamburger Animation
-            hamburger.classList.toggle("toggle");
-        });
-      </script>      
+// Character number of the current sentence being processed 
+var _PART_INDEX = 0;
+
+// Holds the handle returned from setInterval
+var _INTERVAL_VAL;
+
+// Element that holds the text
+var _ELEMENT = document.querySelector("#text");
+
+
+// Implements typing effect
+function Type() { 
+	// Get substring with 1 characater added
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+	_ELEMENT.innerHTML = text;
+	_PART_INDEX++;
+
+	// If full sentence has been displayed then start to delete the sentence after some time
+	if(text === _CONTENT[_PART]) {
+		// Hide the cursor
+		//_CURSOR.style.display = 'none';
+
+		clearInterval(_INTERVAL_VAL);
+		setTimeout(function() {
+			_INTERVAL_VAL = setInterval(Delete, 50);
+		}, 1000);
+	}
+}
+
+// Implements deleting effect
+function Delete() {
+	// Get substring with 1 characater deleted
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+	_ELEMENT.innerHTML = text;
+	_PART_INDEX--;
+
+	// If sentence has been deleted then start to display the next sentence
+	if(text === '') {
+		clearInterval(_INTERVAL_VAL);
+
+		// If current sentence was last then display the first one, else move to the next
+		if(_PART == (_CONTENT.length - 1))
+			_PART = 0;
+		else
+			_PART++;
+		
+		_PART_INDEX = 0;
+
+		// Start to display the next sentence after some time
+		setTimeout(function() {
+			//_CURSOR.style.display = 'inline-block';
+			_INTERVAL_VAL = setInterval(Type, 100);
+		}, 200);
+	}
+}
+
+// Start the typing effect on load
+_INTERVAL_VAL = setInterval(Type, 100);
+
+const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll("nav .container ul li");
+window.onscroll = () => {
+  var current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop-60) {
+      current = section.getAttribute("id"); 
+    }
+  });
+
+  navLi.forEach((li) => {
+    li.classList.remove("active");
+    if (li.classList.contains(current)) {
+      li.classList.add("active");
+    }
+  });
+};
+
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+  
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 200;
+  
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active2");
+      }
+    }
+  }
+  
+  window.addEventListener("scroll", reveal);
+  function load(url) {
+    showLoader();
+    window.location=url;
+}
+
+function load(){
+    alert("Please wait your message is in sending process.....");
+    var url = "{% url 'home' %}";
+
+    var id = "#sec-1";
+    document.location.href = url + id;
+}
+    </script>
 </body>
 </html>
